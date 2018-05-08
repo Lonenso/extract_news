@@ -1,5 +1,5 @@
 ## broadcrawler.py
-采用Crawlspider,Rule 来提取链接,并利用自定义后的newspaper库来判断是否是新闻,解析网页内容,是新闻我们就解析,不是的话对于没对接的可以先扔掉
+采用Crawlspider,Rule 来提取链接,并利用自定义后的newspaper库来判断是否是新闻,解析网页内容,是新闻我们就解析,不是的话对于还没对接的系统来说可以先丢掉
 ## Begin.py
 可以直接运行,调试这个文件. 代替cmd启动,方便
 ## items.py
