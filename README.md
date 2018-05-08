@@ -26,7 +26,7 @@ BroadcrawlerItem是存放新闻item的,similarity可以无视
 没有配置mongo的配置一下，网上教程很多
 ## settings.py
 settings中相应设置字段我都有说明
-##Reference
+## Reference
 * Monkey patch
 http://blog.hszofficial.site/TutorialForPython/%E5%85%83%E7%BC%96%E7%A8%8B/%E7%8C%B4%E5%AD%90%E8%A1%A5%E4%B8%81%E5%92%8C%E7%83%AD%E6%9B%B4%E6%96%B0.html
 
