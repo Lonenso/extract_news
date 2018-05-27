@@ -8,7 +8,7 @@
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
-
+import datetime
 BOT_NAME = 'extract_news'
 
 SPIDER_MODULES = ['extract_news.spiders']
@@ -33,7 +33,7 @@ DOWNLOAD_DELAY = 0.25
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -55,14 +55,15 @@ DOWNLOAD_DELAY = 0.25
 #DOWNLOADER_MIDDLEWARES = {
 #    'extract_news.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
-LOG_LEVEL = 'DEBUG'
+LOG_LEVEL = 'INFO'
+REDIRECT_ENABLED = False
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
 #EXTENSIONS = {
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
-
+DEPTH_LIMIT = 5
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
@@ -70,7 +71,7 @@ ITEM_PIPELINES = {
    # 'extract_news.pipelines.JsonWithEncodingPipeline': 300,
 }
 EXTENSIONS = {
-   'extract_news.patcher.Patcher': 300,
+   'extract_news.patcher.NewspaperPatcher': 300,
 }
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -93,6 +94,10 @@ EXTENSIONS = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+
+LOG_FILE = '{0}_log.txt'.format(datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S"))
+LOG_ENCODING = 'utf-8'
+
 # MONGODB 主机名
 MONGODB_HOST = "127.0.0.1"
 # MONGODB 端口号
@@ -100,11 +105,15 @@ MONGODB_PORT = 27017
 # 数据库名称
 MONGODB_DBNAME = "Extract_News"
 # 存放数据的表名称
-MONGODB_SHEETNAME = "Item"
+MONGODB_SHEETNAME = "AutoText"
 # 是否启动补丁
-PATCHER_ENABLED=True
+
+
+CONCURRENT_REQUESTS = 100
+
 # scrapy 使用的是LIFO队列 以DFO爬取
 # 如果要更改为BFO
-# DEPTH_PRIORITY = 1
-# SCHEDULER_DISK_QUEUE = 'scrapy.squeues.PickleFifoDiskQueue'
-# SCHEDULER_MEMORY_QUEUE = 'scrapy.squeues.FifoMemoryQueue'
+# 以下三个设置
+DEPTH_PRIORITY = 1
+SCHEDULER_DISK_QUEUE = 'scrapy.squeues.PickleFifoDiskQueue'
+SCHEDULER_MEMORY_QUEUE = 'scrapy.squeues.FifoMemoryQueue'

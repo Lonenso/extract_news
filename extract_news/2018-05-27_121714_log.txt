@@ -1,0 +1,7 @@
+2018-05-27 12:17:15 [scrapy.utils.log] INFO: Scrapy 1.3.3 started (bot: extract_news)
+2018-05-27 12:17:15 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'extract_news', 'CONCURRENT_REQUESTS': 100, 'COOKIES_ENABLED': False, 'DEPTH_LIMIT': 5, 'DEPTH_PRIORITY': 1, 'DOWNLOAD_DELAY': 0.25, 'LOG_FILE': '2018-05-27_121714_log.txt', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'extract_news.spiders', 'REDIRECT_ENABLED': False, 'SCHEDULER_DISK_QUEUE': 'scrapy.squeues.PickleFifoDiskQueue', 'SCHEDULER_MEMORY_QUEUE': 'scrapy.squeues.FifoMemoryQueue', 'SPIDER_MODULES': ['extract_news.spiders']}
+2018-05-27 12:17:15 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'extract_news.patcher.NewspaperPatcher']

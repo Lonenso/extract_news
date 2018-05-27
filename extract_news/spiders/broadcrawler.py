@@ -1,5 +1,4 @@
 import hashlib
-
 from scrapy.spiders import CrawlSpider, Spider, Rule
 from datetime import datetime
 from selenium import webdriver
@@ -216,9 +215,17 @@ class sinaSpider(CrawlSpider):
            # self.start_urls.append(response.url)
             pass
 
+
+"""
+目前完成 
+稳定提取时间，
+限制域名 需设计算法
+
+"""
+
+
 #TODO:pipeline item 过滤
 #TODO:  限制域名   a.b.c.d.e   b.c.d.e
-#TODO: rule的运行流程
 #TODO： newspaper的cleaner运行流程
 #TODO: 如何加速
 #TODO: 健壮性

@@ -63,6 +63,10 @@ class JsonWithEncodingPipeline(object):
 #         else:
 #             print('DISCARD ITEM: ' + item['title']+'\n'+item['url'])
 
+
+
+
+
 class MongoPipeline(object):
     def __init__(self):
         host = settings["MONGODB_HOST"]
